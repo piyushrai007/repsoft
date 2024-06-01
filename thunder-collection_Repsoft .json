@@ -1,0 +1,118 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Repsoft ",
+    "collectionId": "8a1572bd-c294-458d-879a-0c705911dadd",
+    "dateExported": "2024-06-01T19:45:39.713Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "35ccfd24-88eb-435a-af97-75a9df9c299a",
+            "colId": "8a1572bd-c294-458d-879a-0c705911dadd",
+            "containerId": "",
+            "name": "signup",
+            "url": "http://127.0.0.1:8000/api/signup/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-01T18:10:45.374Z",
+            "modified": "2024-06-01T19:37:10.395Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"testpassword\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "1862d69f-fedd-4e20-8413-9a20925f5285",
+            "colId": "8a1572bd-c294-458d-879a-0c705911dadd",
+            "containerId": "",
+            "name": "login",
+            "url": "http://127.0.0.1:8000/api/login/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-06-01T18:12:26.104Z",
+            "modified": "2024-06-01T19:41:10.064Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"testpassword\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "ca872f1c-9fe2-4951-a376-9b937d1d341e",
+            "colId": "8a1572bd-c294-458d-879a-0c705911dadd",
+            "containerId": "",
+            "name": "create location",
+            "url": "http://127.0.0.1:8000/api/locations/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-06-01T18:13:30.366Z",
+            "modified": "2024-06-01T19:41:53.560Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "c2838cd63072c657a4b6736e4d9d28f69d0b8d5b"
+                },
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Test Location\",\n    \"latitude\": 12.9715987,\n    \"longitude\": 77.594566\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "597dddfb-83d5-4b81-afb6-cd35898ed820",
+            "colId": "8a1572bd-c294-458d-879a-0c705911dadd",
+            "containerId": "",
+            "name": "listlocation",
+            "url": "http://127.0.0.1:8000/api/locations/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-06-01T19:43:32.014Z",
+            "modified": "2024-06-01T19:44:15.270Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "c2838cd63072c657a4b6736e4d9d28f69d0b8d5b"
+                }
+            ]
+        },
+        {
+            "_id": "52adacf7-5d53-4eae-ab67-14aa1696ea2a",
+            "colId": "8a1572bd-c294-458d-879a-0c705911dadd",
+            "containerId": "",
+            "name": "search",
+            "url": "http://127.0.0.1:8000/api/locations/search/?q=Test",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-06-01T19:44:41.182Z",
+            "modified": "2024-06-01T19:45:07.979Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "c2838cd63072c657a4b6736e4d9d28f69d0b8d5b"
+                }
+            ],
+            "params": [
+                {
+                    "name": "q",
+                    "value": "Test",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "HrrZsxBFqXd0pBaHsPOWR-SXjzHnfc4IcYXv1FMrbDhbTR2xuxIKdQN-IZ1pUW0-GCyvN5xVeXxI4vfP6pgKig"
+}
