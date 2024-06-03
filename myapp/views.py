@@ -7,7 +7,13 @@ from rest_framework.authtoken.models import Token
 from .models import Location
 from .serializers import LocationSerializer
 from django.contrib.auth import authenticate
-from rest_framework.authtoken.models import Token
+import requests
+from rest_framework.response import Response
+from django.conf import settings
+
+
+# Ensure you set your Google API key in the environment or securely store it
+
 class SignupView(APIView):
     def post(self, request, *args, **kwargs):
         username = request.data.get('username')
@@ -38,8 +44,34 @@ class LocationListCreateView(generics.ListCreateAPIView):
 class LocationSearchView(APIView):
     def get(self, request, *args, **kwargs):
         query = request.query_params.get('q', None)
-        if query:
-            locations = Location.objects.filter(name__icontains=query)
-            serializer = LocationSerializer(locations, many=True)
-            return Response(serializer.data)
-        return Response({"error": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
+        if not query:
+            return Response({"error": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Make a request to Google Maps API
+        google_api_url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+        params = {
+            'query': query,
+            'key': settings.GOOGLE_API_KEY
+        }
+        
+        response = requests.get(google_api_url, params=params)
+        
+        if response.status_code != 200:
+            return Response({"error": "Failed to fetch data from Google Maps API"}, status=response.status_code)
+        
+        data = response.json()
+        
+        # Extract relevant information from the response
+        results = data.get('results', [])
+        locations = []
+        
+        for result in results:
+            location = {
+                'name': result.get('name'),
+                'address': result.get('formatted_address'),
+                'latitude': result['geometry']['location']['lat'],
+                'longitude': result['geometry']['location']['lng'],
+            }
+            locations.append(location)
+        
+        return Response(locations)

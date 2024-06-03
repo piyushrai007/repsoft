@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Repsoft ",
     "collectionId": "8a1572bd-c294-458d-879a-0c705911dadd",
-    "dateExported": "2024-06-01T19:45:39.713Z",
+    "dateExported": "2024-06-03T04:05:07.348Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -94,25 +94,18 @@
             "colId": "8a1572bd-c294-458d-879a-0c705911dadd",
             "containerId": "",
             "name": "search",
-            "url": "http://127.0.0.1:8000/api/locations/search/?q=Test",
+            "url": "http://localhost:8000/location-search/",
             "method": "GET",
             "sortNum": 50000,
             "created": "2024-06-01T19:44:41.182Z",
-            "modified": "2024-06-01T19:45:07.979Z",
-            "headers": [
-                {
-                    "name": "Authorization",
-                    "value": "c2838cd63072c657a4b6736e4d9d28f69d0b8d5b"
-                }
-            ],
-            "params": [
-                {
-                    "name": "q",
-                    "value": "Test",
-                    "isPath": false
-                }
-            ]
+            "modified": "2024-06-03T04:04:52.325Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"q\": \"New York\"\r\n}\r\n",
+                "form": []
+            }
         }
     ],
-    "ref": "HrrZsxBFqXd0pBaHsPOWR-SXjzHnfc4IcYXv1FMrbDhbTR2xuxIKdQN-IZ1pUW0-GCyvN5xVeXxI4vfP6pgKig"
+    "ref": "HrrZsxBFqXd0pBaHsPOWR4LHjx6d59MpVQ3_7vWeJoNOPPVIcZcd79LiS1Z9S7C03bk7bZi4FwcORPanVYeBbA"
 }
